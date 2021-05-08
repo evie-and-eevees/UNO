@@ -77,6 +77,7 @@ class Player:
         self.hand.remove(play)
         return play
 
+    @app.route('/playerturn', methods=['PUSH'])
     def realPlay(self, topCard, deck):
         Hand = hand(self.hand, deck)
         session['output'] += 'Your hand: ', ', '.join(Hand) + '\n'
