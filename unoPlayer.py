@@ -70,9 +70,9 @@ class Player:
         self.hand.remove(play)
         return play
 
-    def realPlay(self, topCard, deck):
+    def realPlay(self, topCard, deck, output):
         Hand = hand(self.hand, deck)
-        print('Your hand: ', ', '.join(Hand))
+        output += 'Your hand: ', ', '.join(Hand) + '\n'
         check = True
         while check:
             choice = -1
@@ -121,10 +121,10 @@ class Player:
         lst = sorted([R, Y, B, G])
         if lst[-1] == R:
             play = 'R-1'
-        if lst[-1] == Y:
+        elif lst[-1] == Y:
             play = 'Y-1'
-        if lst[-1] == B:
+        elif lst[-1] == B:
             play = 'B-1'
-        if lst[-1] == G:
+        else:
             play = 'G-1'
         return play

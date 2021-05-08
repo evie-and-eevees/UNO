@@ -127,7 +127,10 @@ while GAME:
         for x in scores.values():
             if x >= 150:
                 GAME = False
-        input('Press enter when ready for next round.')
+        if GAME:
+            input('Press enter when ready for next round.')
+        else:
+            input('Game over! Press enter to see final scores.')
         print()
 winner = ['', 150]
 for x in scores:
